@@ -1,0 +1,61 @@
+<!-- Enter your HTML code here. Plagiarism will NOT be tolerated!
+Remember, your solution will be manually evaluated within 15 business days. -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<link rel="shortcut icon"
+		href="https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/favicon.png?alt=media&token=9612bf70-215d-4e77-97ba-16dbaa8aeb84" />
+	<title>VanHack's upcomming events</title>
+</head>
+
+<body onload="loadNextEvents()">
+
+	<div class="vh-header">
+		<img src="https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/vh-blue.png?alt=media&token=0ed3fdea-64cb-4f19-a535-36d5a8c68d3c" alt="VanHack's Icon" class="vh-logo"></img>
+		<a href="https://vanhack.com/premium" target="_blank" class="header-actions">Become a premium user</a>
+	</div>
+
+	<div class="events-head-container">
+		<span class="upcomming-title">Upcomming VanHack's events & activities</span>
+		<span class="upcomming-next-event">Choose the event type below. Next event starts in: 
+            <span class="upcomming-next-event-countdown" id="timeText"></span>
+		</span>
+		<div class="next-events-container">
+			<div class="event-type-circle-meetup event-circle data-zoom">
+				<span class="event-type-text">Meetup</span>
+			</div>
+			<div class="event-type-circle-leap event-circle data-zoom">
+				<span class="event-type-text">Leap</span>
+			</div>
+			<div class="event-type-circle-rmission event-circle data-zoom">
+				<span class="event-type-text">Recruiting Mission</span>
+			</div>
+			<div class="event-type-circle-vhackathon event-circle data-zoom">
+				<span class="event-type-text">Hackathon</span>
+			</div>
+			<div class="event-type-circle-premium-webinar event-circle data-zoom">
+				<span class="event-type-text">Premium Webinar</span>
+			</div>
+			<div class="event-type-circle-open-webinar event-circle data-zoom">
+				<span class="event-type-text">Open Webinar</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="events-body-container"></div>
+	<div class="success-notify" id="successNotify"></div>
+	<div class="details-modal" id="detailsModal">
+		<div class="details-content">
+			<span class="close-button" id="closeButton">&times;</span>
+			<p>Data here!</p>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,405 @@
+/* Add your css styles here. Plagiarism will NOT be tolerated! */
+
+html {
+    font-family: "Roboto";
+}
+
+body {
+    margin: 0;
+}
+
+.vh-header {
+    background-color:white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    box-shadow: 0 0px 5px rgb(156, 156, 156);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vh-logo {
+    width: 12vw;
+    padding-left: 5%;
+}
+
+.header-actions {
+    color:#0776CE;
+    margin-right: 1vw;
+    vertical-align: middle;
+    font-size: 1.4vw;
+    text-decoration: underline;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.events-head-container {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    background-color: #F7F7F7;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.next-events-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.event-circle {
+    width: 12vw;
+    height: 12vw;
+    border-radius: 12vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-type-circle-meetup {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/Events%2Fmeetup.jpg?alt=media&token=98fc4841-47d3-4992-915f-afb21cc6801f");
+    margin: 2vw;
+    box-shadow: 0 10px 15px rgb(156, 156, 156);
+    cursor: pointer;
+}
+
+.event-type-circle-leap {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/Events%2Fleap.jpg?alt=media&token=eb297422-e003-4923-b56e-90a05cb4fb8c");
+    margin: 2vw;
+    background-size: 300px;
+    box-shadow: 0 10px 15px rgb(156, 156, 156);
+    cursor: pointer;
+}
+
+.event-type-circle-rmission {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/Events%2Frecruiting.jpg?alt=media&token=57506230-5319-4dea-aff7-da3ef947607d");
+    margin: 2vw;
+    background-size: 300px;
+    box-shadow: 0 10px 15px rgb(156, 156, 156);
+    cursor: pointer;
+}
+
+.event-type-circle-vhackathon {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/Events%2Fhackathon.jpg?alt=media&token=c0fc5984-be49-4c18-ab0f-4f4184189863");
+    margin: 2vw;
+    background-size: 300px;
+    box-shadow: 0 10px 15px rgb(156, 156, 156);
+    cursor: pointer;
+}
+
+.event-type-circle-premium-webinar {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/Events%2Fpremium%20webinar.jpg?alt=media&token=6c500284-d5a0-42d5-9ee8-b5dea2fd38a1");
+    margin: 2vw;
+    background-size: 300px;
+    box-shadow: 0 10px 15px rgb(156, 156, 156);
+    cursor: pointer;
+}
+
+.event-type-circle-open-webinar {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/Events%2Fwebinar.jpg?alt=media&token=2b23a61d-6b4b-4718-817e-5b95fb00b647");
+    margin: 2vw;
+    background-size: 300px;
+    box-shadow: 0 10px 15px rgb(156, 156, 156);
+    cursor: pointer;
+}
+
+.upcomming-title {
+    color: #0776CE;
+    font-size: 32px;
+    font-style: bold;
+    align-items: center;
+    text-align: center;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.upcomming-next-event {
+    font-size: 18px;
+    align-items: center;
+    text-align: center;
+}
+
+.upcomming-next-event-countdown {
+    font-size: 24px;
+    color: #0776CE;
+}
+
+.event-type-text {
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-style: bold;
+    text-shadow: 1px 1px black;
+}
+.next-events-title {
+    font-size: 26px;
+    color: #0776CE;
+}
+
+.events-body-container {
+    background-color: #F7F7F7;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2vw;
+    padding-top: 2vw;
+}
+
+
+.event-data {
+    display: flex;
+    flex-direction: column;
+    width: 29.5vw;
+    height: 15vw;
+    border-radius: 20px;
+    margin: 1vw;
+    cursor: pointer;
+    background-size: 400px;
+    align-items: flex-end;
+}
+
+.event-data-view {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 29.5vw;
+    height: 5vw;
+    margin-top: 8vw;
+    padding-bottom: 2vw;
+    background-color: rgba(33, 171, 235, 0.85);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.event-information {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-title {
+    color: white;
+    font-size: 1.5vw;
+    padding-top: 0.5vw;
+    padding-left: 1vw;
+}
+
+.event-date {
+    color: white;
+    font-size: 1vw;
+    padding-left: 1vw;
+}
+
+.clear-filter-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 5vw;
+}
+
+.clear-filter-text {
+    cursor: pointer;
+    color: red;
+    width: auto;
+    border: 1px solid red;
+    padding: 1vw;
+    border-radius: 20px;
+}
+
+.share-text {
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
+    padding: 0.7vw;
+    margin-right: 0.7vw;
+    border-radius: 1vw;
+    font-size: 1.5vw;
+}
+
+.event-premium {
+    cursor: pointer;
+    color: white;
+    background-color: goldenrod;
+    width: auto;
+    padding: 0.2vw;
+    margin-left: 0.8vw;
+    border-radius: 1vw;
+    font-size: 1vw;
+}
+
+.event-recomended {
+    cursor: pointer;
+    color: white;
+    background-color: green;
+    width: auto;
+    padding: 0.2vw;
+    margin-left: 0.8vw;
+    margin-top: -1vw;
+    border-radius: 1vw;
+    font-size: 1vw;
+}
+
+.success-notify {
+    position: fixed;
+    top: 0.7vw;
+    right: 1vw;
+    background-color: rgba(0, 128, 0, 0.671);
+    color: white;
+    padding: 2vw 3vw 2vw 3vw;
+    display: none;
+}
+
+.details-modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .details-content {
+        background-color: "#fefefe";
+        margin: auto;
+        width: 60vw;
+        padding: 2vw;
+    }
+
+
+/* Begining media queries section */
+@media screen and (max-width: 640px){
+
+    .vh-logo {
+        width: 18vw;
+        padding-left: 5%;
+    }
+
+    .header-actions {
+        color:#0776CE;
+        margin-right: 1vw;
+        vertical-align: middle;
+        font-size: 2vw;
+        text-decoration: underline;
+    }
+
+    .event-type-text {
+        color: white;
+        align-items: center;
+        justify-content: center;
+        font-style: bold;
+        text-shadow: 1px 1px black;
+    }
+
+    .event-circle {
+        width: 30vw;
+        height: 30vw;
+        border-radius: 30vw;
+    }
+
+    .event-data {
+        display: flex;
+        flex-direction: column;
+        width: 45vw;
+        height: 30vw;
+        border-radius: 20px;
+        margin: 1vw;
+        cursor: pointer;
+        background-size: 400px;
+        align-items: flex-end;
+    }
+
+    .event-data-view {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 45vw;
+        height: 20vw;
+        margin-top: 20vw;
+        padding-bottom: 2vw;
+        background-color: rgba(33, 171, 235, 0.85);
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    .event-recomended {
+        cursor: pointer;
+        color: white;
+        background-color: green;
+        width: auto;
+        padding: 0.2vw;
+        margin-left: 0.8vw;
+        margin-top: -1vw;
+        border-radius: 1vw;
+        font-size: 2vw;
+    }
+
+    .event-premium {
+        cursor: pointer;
+        color: white;
+        background-color: goldenrod;
+        width: auto;
+        padding: 0.2vw;
+        margin-left: 0.8vw;
+        border-radius: 1vw;
+        font-size: 2vw;
+    }
+
+    .share-text {
+        cursor: pointer;
+        color: white;
+        border: 1px solid white;
+        padding: 0.7vw;
+        margin-right: 0.7vw;
+        border-radius: 1vw;
+        font-size: 3vw;
+    }
+
+    .event-title {
+        color: white;
+        font-size: 2.5vw;
+        padding-top: 0.5vw;
+        padding-left: 1vw;
+    }
+
+    .event-date {
+        color: white;
+        font-size: 1.5vw;
+        padding-left: 1vw;
+    }
+
+    .close-button {
+        color: white;
+        float: right;
+        font-style: bold;
+        font-size: 4vw;
+    }
+
+    .close:hover {
+        color: blue;
+        cursor: pointer;
+    }
+}
+/* Ending media queries section */
+
+.data-zoom:hover {
+    transform: scale(1.1);
+}
+
