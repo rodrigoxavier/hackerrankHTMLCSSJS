@@ -145,9 +145,13 @@ body {
     font-style: bold;
     text-shadow: 1px 1px black;
 }
-.next-events-title {
-    font-size: 26px;
+.nearest-events-text {
+    font-size: 2vw;
     color: #0776CE;
+    text-align: center;
+    padding-left: 5vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
 }
 
 .events-body-container {
@@ -306,6 +310,15 @@ body {
         justify-content: center;
         font-style: bold;
         text-shadow: 1px 1px black;
+    }
+
+    .nearest-events-text {
+        font-size: 4vw;
+        color: #0776CE;
+        text-align: center;
+        padding-left: 5vw;
+        padding-top: 2vw;
+        padding-bottom: 2vw;
     }
 
     .event-circle {
