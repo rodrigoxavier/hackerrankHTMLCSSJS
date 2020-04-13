@@ -8,6 +8,9 @@ Remember, your solution will be manually evaluated within 15 business days. -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+	<script src="./functions.js"></script>
+	<link rel="stylesheet" href="./styles.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="shortcut icon"
 		href="https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/favicon.png?alt=media&token=9612bf70-215d-4e77-97ba-16dbaa8aeb84" />
@@ -17,45 +20,80 @@ Remember, your solution will be manually evaluated within 15 business days. -->
 <body onload="loadNextEvents()">
 
 	<div class="vh-header">
-		<img src="https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/vh-blue.png?alt=media&token=0ed3fdea-64cb-4f19-a535-36d5a8c68d3c" alt="VanHack's Icon" class="vh-logo"></img>
+		<img src="https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/vh-blue.png?alt=media&token=0ed3fdea-64cb-4f19-a535-36d5a8c68d3c"
+			alt="VanHack's Icon" class="vh-logo"></img>
 		<a href="https://vanhack.com/premium" target="_blank" class="header-actions">Become a premium user</a>
 	</div>
 
 	<div class="events-head-container">
 		<span class="upcomming-title">Upcomming VanHack's events & activities</span>
-		<span class="upcomming-next-event">Choose the event type below. Next event starts in: 
-            <span class="upcomming-next-event-countdown" id="timeText"></span>
+		<span class="upcomming-next-event">Choose the event type below. Next event starts in:
+			<span class="upcomming-next-event-countdown" id="timeText"></span>
 		</span>
-        <div class="next-events-container">
-			<div class="event-type-circle-meetup event-circle data-zoom">
+		<div class="next-events-container">
+			<div class="event-type-circle-meetup event-circle data-zoom" onclick="filterEvents('meetup')">
 				<span class="event-type-text">Meetup</span>
 			</div>
-			<div class="event-type-circle-leap event-circle data-zoom">
+			<div class="event-type-circle-leap event-circle data-zoom" onclick="filterEvents('leap')">
 				<span class="event-type-text">Leap</span>
 			</div>
-			<div class="event-type-circle-rmission event-circle data-zoom">
+			<div class="event-type-circle-rmission event-circle data-zoom" onclick="filterEvents('recruiting')">
 				<span class="event-type-text">Recruiting Mission</span>
 			</div>
-			<div class="event-type-circle-vhackathon event-circle data-zoom">
+			<div class="event-type-circle-vhackathon event-circle data-zoom" onclick="filterEvents('hackathon')">
 				<span class="event-type-text">Hackathon</span>
 			</div>
-			<div class="event-type-circle-premium-webinar event-circle data-zoom">
+			<div class="event-type-circle-premium-webinar event-circle data-zoom" onclick="filterEvents('paidWebinar')">
 				<span class="event-type-text">Premium Webinar</span>
 			</div>
-			<div class="event-type-circle-open-webinar event-circle data-zoom">
+			<div class="event-type-circle-open-webinar event-circle data-zoom" onclick="filterEvents('webinar')">
 				<span class="event-type-text">Open Webinar</span>
 			</div>
 		</div>
 	</div>
 
-    <span class="nearest-events-text">Nearest events</span>
-
+	<div class="next-events-container">
+		<span class="nearest-events-text">Nearest events</span>
+		<div class="clear-filter-container" id="clearFilter" onclick="clearFilter()">
+			<span class="clear-filter-text">Clear filter x</span>
+		</div>
+	</div>
 	<div class="events-body-container"></div>
 	<div class="success-notify" id="successNotify"></div>
 	<div class="details-modal" id="detailsModal">
 		<div class="details-content">
+			<div class="modal-body">
+				<div class="event-cover" id="eventCover">
+					<div class="event-cover-mask">
+						<div class="event-modal-title" id="eventModalTitle"></div>
+						<div class="event-date-time" id="eventDateTime"></div>
+						<div class="event-date-time" id="eventLocal"></div>
+						<div class="event-description" id="eventDescription"></div>
+						<p class="event-call-to-action-text">Would you like to participate? Fill the form below and aply
+							to this event!</p>
+					</div>
+				</div>
+				<form class="form-view">
+					<div class="input-container">
+						<label for="userName">Your name</label>
+						<input type="text" id="userName" name="userName" required>
+					</div>
+					<div class="input-container">
+						<label for="userMail">Your email</label>
+						<input type="text" id="userMail" name="userMail" required>
+					</div>
+					<button class="apply-button" onclick="applyToEvent()">
+						Apply!
+					</button>
+				</form>
+				<div class="become-premium-call-to-action">
+					<span class="error">You must to be premium to apply to this event.
+						<a href="https://vanhack.com/premium" target="_blank" class="header-actions"> Become Premium</a>
+					</span>
+				</div>
+			</div>
 			<span class="close-button" id="closeButton">&times;</span>
-			<p>Data here!</p>
+			<span id="eventTag" class="hidden"></span>
 		</div>
 	</div>
 </body>

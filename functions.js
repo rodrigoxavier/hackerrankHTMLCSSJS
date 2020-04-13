@@ -1,5 +1,11 @@
 // Add your javascript here. Plagiarism will NOT be tolerated!
 
+$("#closeButton").click(() => {
+    $("#detailsModal").css("display", "none");
+    $(".become-premium-call-to-action").css("display", "none");
+    $("#eventTag").text("");
+});
+
 const eventsArray = [
     {
         uid: 1,
@@ -25,7 +31,7 @@ const eventsArray = [
         eventDateTime: 1589104800000,
         eventLocal: "Hangouts/Youtube",
         imgUrl: "https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/EventsImages%2Fgoogle-trends.jpg?alt=media&token=bbc15723-0dd5-442c-b31f-237b10e89da5",
-        description: "Learn how to improve you knowledge with this powerful tool calld Google Trends. You'll learn how to use it for you.",
+        description: "Learn how to improve you knowledge with this powerful tool calld Google Trends. You will learn how to use it for you.",
         eventTag: "webinar"
     },
     {
@@ -34,7 +40,7 @@ const eventsArray = [
         eventDateTime: 1591783257000,
         eventLocal: "Whereby",
         imgUrl: "https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/EventsImages%2Fmoney.jpg?alt=media&token=4ee37724-55fc-42c3-9991-c163ec6af2d6",
-        description: "In this webinar you'll learn how to use your knowledge and your skill to gain money honestly. We'll help you to find your best way to grow up.",
+        description: "In this webinar you will learn how to use your knowledge and your skill to gain money honestly. We will help you to find your best way to grow up.",
         eventTag: "paidWebinar"
     },
     {
@@ -43,7 +49,7 @@ const eventsArray = [
         eventDateTime: 1589533200000,
         eventLocal: "Youtube/Instagram",
         imgUrl: "https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/EventsImages%2Frecruiting-image.jpg?alt=media&token=573bf7ec-f6a9-4cab-b4b8-1f22ae7441b5",
-        description: "In this live we'll talk about home office and how to companies can hire in this epidemic. We'll tech you how to be noted in the sea of peaple looking for remote jobs.",
+        description: "In this live we will talk about home office and how to companies can hire in this epidemic. We will tech you how to be noted in the sea of peaple looking for remote jobs.",
         eventTag: "recruiting"
     },
     {
@@ -66,7 +72,7 @@ const eventsArray = [
     },
     {
         uid: 8,
-        eventName: "HackerRank's talks: Stay safe",
+        eventName: "HackerRank talks: Stay safe",
         eventDateTime: 1589742000000,
         eventLocal: "Hangouts",
         imgUrl: "https://firebasestorage.googleapis.com/v0/b/hackerrank-html-css-js.appspot.com/o/EventsImages%2Fhackerrank.png?alt=media&token=6cf2f9d3-1d82-43e5-ae87-04a6aa1040d5",
@@ -113,9 +119,9 @@ function renderEvent(eventData) {
     const isRecomended = eventData.eventTag === "hackathon" || eventData.eventTag === "leap" || eventData.eventTag === "recruiting";
 
 
-    const divToAppend = 
+    const divToAppend =
         `
-            <div class="event-data" style="background-image: url(${eventData.imgUrl})" onClick="openEventDetails('${eventData.eventName}', '${eventData.eventDateTime}', '${eventData.eventLocal}', '${eventData.imgUrl}', '${eventData.eventTag}')">
+            <div class="event-data" style="background-image: url(${eventData.imgUrl})" onClick="openEventDetails('${eventData.eventName}', '${eventData.eventDateTime}', '${eventData.eventLocal}', '${eventData.imgUrl}', '${eventData.eventTag}', '${eventData.description}')">
                 <span class="${isRecomended && "event-recomended"}">${isRecomended && "Recomended" || ""}</span>
                 <div class="event-data-view">
                     <div class="event-information">
@@ -191,8 +197,39 @@ function clearFilter() {
     loadNextEvents();
 }
 
-function openEventDetails(eventName, eventDateTime, eventLocal, imageURL, eventTag) {
+function openEventDetails(eventName, eventDateTime, eventLocal, imageURL, eventTag, eventDescription) {
+    const date = normalizeNumber(new Date(+eventDateTime).getDate());
+    const month = normalizeNumber(new Date(+eventDateTime).getMonth());
+    const year = normalizeNumber(new Date(+eventDateTime).getFullYear());
+    const hour = normalizeNumber(new Date(+eventDateTime).getHours());
+    const minute = normalizeNumber(new Date(+eventDateTime).getMinutes());
+
     console.log(eventName, eventDateTime, eventLocal, imageURL, eventTag);
-    $("#detailsModal").attr("display", "block");
-    // const closeButton = $("#closeButton");
+    $("#detailsModal").css("display", "block");
+    $("#eventCover").css("background-image", "url(" + imageURL + ")");
+    $("#eventModalTitle").text(eventName);
+    $("#eventLocal").text(eventLocal);
+    $("#eventDateTime").text(`${date}/${month}/${year} ${hour}:${minute}`);
+    $("#eventDescription").text(eventDescription);
+    $("#eventTag").text(eventTag);
+}
+
+function applyToEvent() {
+    const userName = $("#userName").val();
+    const userMail = $("#userMail").val();
+    if (!userName || !userMail)
+        return;
+
+    event.preventDefault();
+    
+    const eventTag = $("#eventTag").text();
+    if (eventTag === "paidWebinar") {
+        $(".become-premium-call-to-action").css("display", "block");
+    } else {
+        $("#detailsModal").css("display", "none");
+        $("#eventTag").text("");
+        $("#successNotify").text("You applied successfully to this event!")
+        $("#successNotify").fadeIn(200);
+        $("#successNotify").fadeOut(5000);
+    }
 }

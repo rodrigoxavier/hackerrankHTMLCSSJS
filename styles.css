@@ -8,6 +8,25 @@ body {
     margin: 0;
 }
 
+label {
+    text-align: center;
+    color: #0776CE;
+    font-size: 1.2vw;
+    font-style: bold;
+    align-items: center;
+    margin-top: 0.5vw;
+}
+
+input {
+    border-radius: 1vw;
+    width: 20vw;
+    height: 2vw;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
 .vh-header {
     background-color:white;
     position: fixed;
@@ -130,6 +149,13 @@ body {
     font-size: 18px;
     align-items: center;
     text-align: center;
+}
+
+.error {
+    font-size: 18px;
+    align-items: center;
+    text-align: center;
+    color: red;
 }
 
 .upcomming-next-event-countdown {
@@ -269,28 +295,121 @@ body {
 }
 
 .details-modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.4);
-    }
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
 
-    .details-content {
-        background-color: "#fefefe";
-        margin: auto;
-        width: 60vw;
-        padding: 2vw;
-    }
+.details-content {
+    background-color: "#fefefe";
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.modal-body {
+    margin-left: 25vw;
+    margin-top: 10vh;
+    width: 50vw;
+    height: 80vh;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.close-button {
+    color: white;
+    text-shadow: 1px 1px black;
+    float: right;
+    font-style: bold;
+    font-size: 2vw;
+    cursor: pointer;
+    margin-left: -2vw;
+    margin-top: 10vh;
+}
+
+.event-cover {
+    width: 50vw;
+    height: 40vh;
+    border-radius: 0 0 2vw 2vw;
+}
+
+.event-cover-mask {
+    width: 50vw;
+    height: 40vh;
+    border-radius: 0 0 2vw 2vw;
+    background-color: rgba(0,0,0, 0.6);
+}
+
+.form-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container {
+    margin: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.apply-button {
+    background-color: #0776CE;
+    padding: 1vw;
+    border-radius: 1vw;
+    font-size: 1.3vw;
+    color: white;
+    cursor: pointer;
+}
+
+.event-modal-title {
+    color: white;
+    font-size: 30px;
+    padding-top: 1vw;
+    padding-left: 1vw;
+}
+
+.event-date-time {
+     color: white;
+    font-size: 26px;
+    padding-top: 1vw;
+    padding-left: 1vw;
+}
+
+.event-description {
+    color: white;
+    font-size: 20px;
+    padding-top: 1vw;
+    padding-left: 1vw;
+}
+
+.event-call-to-action-text {
+    color: white;
+    font-size: 26px;
+    padding-top: 0.5vw;
+    padding-left: 1vw;
+    text-align: center;
+}
+
+.become-premium-call-to-action {
+    text-align: center;
+    display: none;
+}
+
 
 
 /* Begining media queries section */
-@media screen and (max-width: 640px){
 
+@media screen and (max-width: 640px){
     .vh-logo {
         width: 18vw;
         padding-left: 5%;
@@ -398,18 +517,38 @@ body {
         padding-left: 1vw;
     }
 
-    .close-button {
+    .event-modal-title {
         color: white;
-        float: right;
-        font-style: bold;
-        font-size: 4vw;
+        font-size: 20px;
+        padding-top: 1vw;
+        padding-left: 1vw;
     }
 
-    .close:hover {
-        color: blue;
-        cursor: pointer;
+    .event-date-time {
+        color: white;
+        font-size: 15px;
+        padding-top: 1vw;
+        padding-left: 1vw;
     }
+
+    .event-description {
+        color: white;
+        font-size: 12px;
+        padding-top: 1vw;
+        padding-left: 1vw;
+    }
+
+    .event-call-to-action-text {
+        color: white;
+        font-size: 15px;
+        padding-top: 0.5vw;
+        padding-left: 1vw;
+        text-align: center;
+    }
+
 }
+
+
 /* Ending media queries section */
 
 .data-zoom:hover {
