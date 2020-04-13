@@ -190,6 +190,7 @@ function shareEvent(eventData) {
     $("#successNotify").text("Link copied to clipboard. Now you can share in any social network!")
     $("#successNotify").fadeIn(500);
     $("#successNotify").fadeOut(4000);
+    event.stopPropagation();
 }
 
 function clearFilter() {
